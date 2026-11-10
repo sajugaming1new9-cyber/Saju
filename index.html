@@ -1,210 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Best Friend Test 😂</title>
-
+<meta name="theme-color" content="#05070b">
+<title>SAJU // ACCESS GRANTED</title>
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #080808, #241020, #090909);
-    font-family: Arial, sans-serif;
-    color: white;
-    padding: 20px;
-}
-
-.container {
-    width: 100%;
-    max-width: 400px;
-    background: #151515;
-    border: 1px solid #ff3b91;
-    border-radius: 25px;
-    padding: 30px 22px;
-    text-align: center;
-    box-shadow: 0 0 35px #ff168044;
-}
-
-.emoji {
-    font-size: 65px;
-    margin-bottom: 15px;
-}
-
-h1 {
-    color: #ff4caa;
-    margin-bottom: 15px;
-}
-
-p {
-    color: #ccc;
-    line-height: 1.6;
-    margin-bottom: 20px;
-}
-
-input {
-    width: 100%;
-    padding: 14px;
-    border-radius: 12px;
-    border: 1px solid #ff4caa;
-    background: #222;
-    color: white;
-    outline: none;
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-
-button {
-    padding: 13px 22px;
-    border: none;
-    border-radius: 12px;
-    background: #ff3b91;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 5px;
-    transition: .3s;
-}
-
-button:hover {
-    transform: scale(1.06);
-    background: #ff007b;
-}
-
-#result {
-    margin-top: 20px;
-    color: #ff75bb;
-    font-size: 19px;
-    font-weight: bold;
-    line-height: 1.6;
-}
-
-.hidden {
-    display: none;
-}
-
-.footer {
-    color: #777;
-    font-size: 11px;
-    margin-top: 25px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+:root{--green:#00ff9c;--cyan:#00d9ff;--pink:#ff2bd6;--bg:#05070b;--panel:rgba(7,17,22,.88);--muted:#8ba6a1}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0%,#092b29 0%,#071015 38%,#030509 80%);color:#eafff8;font-family:'Rajdhani',sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.14;background-image:linear-gradient(rgba(0,255,156,.14) 1px,transparent 1px),linear-gradient(90deg,rgba(0,255,156,.14) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,black,transparent 90%);z-index:-1}
+.scanlines{position:fixed;inset:0;pointer-events:none;z-index:10;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.12) 4px);opacity:.25}
+.wrap{width:min(920px,92%);margin:auto;padding:26px 0 45px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #17483e;padding:8px 0 17px;color:var(--green);font:600 11px 'Orbitron',sans-serif;letter-spacing:2px}
+.live{display:flex;align-items:center;gap:8px}.dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);animation:pulse 1.2s infinite}
+@keyframes pulse{50%{opacity:.3;box-shadow:0 0 2px var(--green)}}
+.hero{text-align:center;padding:36px 0 22px}
+.kicker{font:500 10px 'Orbitron',sans-serif;color:var(--cyan);letter-spacing:4px}
+h1{font:800 clamp(28px,7vw,58px) 'Orbitron',sans-serif;margin:13px 0 8px;line-height:1.12;text-shadow:0 0 18px #00ff9c55}
+h1 span{color:var(--green)}
+.subtitle{color:#9ab9b1;font-size:18px;letter-spacing:1px}
+.card{position:relative;background:linear-gradient(145deg,rgba(8,25,28,.95),rgba(5,10,16,.96));border:1px solid #17614d;border-radius:18px;padding:24px;margin:18px 0;box-shadow:0 0 35px #00ff9c0d,inset 0 0 25px #00ff9c08;overflow:hidden}
+.card:before{content:"";position:absolute;left:0;top:0;width:70px;height:2px;background:var(--green);box-shadow:0 0 15px var(--green)}
+.section-title{font:600 12px 'Orbitron',sans-serif;letter-spacing:2px;color:var(--green);margin:0 0 18px}
+.profile{display:grid;grid-template-columns:170px 1fr;gap:25px;align-items:center}
+.avatar-wrap{width:160px;height:160px;padding:5px;border-radius:50%;border:1px solid var(--green);box-shadow:0 0 22px #00ff9c44;position:relative;margin:auto}
+.avatar-wrap:after{content:"";position:absolute;inset:-8px;border:1px dashed #00d9ff88;border-radius:50%;animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.avatar{width:100%;height:100%;border-radius:50%;object-fit:cover;background:#0b1b1a}
+.owner{font:700 clamp(21px,5vw,31px) 'Orbitron',sans-serif;color:#fff;overflow-wrap:anywhere}
+.role{color:var(--green);font:500 11px 'Orbitron',sans-serif;letter-spacing:2px;margin:9px 0}
+.bio{font-size:18px;color:#a8c1ba;line-height:1.45}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:15px}
+.tag{border:1px solid #1b5b4d;border-radius:5px;padding:5px 9px;color:#8fffd0;font-size:13px}
+.terminal{background:#020706;border:1px solid #17483e;border-radius:10px;padding:16px;min-height:155px;font:14px/1.8 monospace;color:#9affcf}
+.prompt{color:var(--green)}.cursor{display:inline-block;width:8px;height:15px;background:var(--green);vertical-align:middle;animation:blink .8s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+button,.btn{border:1px solid var(--green);background:#06251d;color:var(--green);padding:12px 17px;border-radius:7px;font:600 11px 'Orbitron',sans-serif;letter-spacing:1px;cursor:pointer;text-decoration:none;transition:.2s}
+button:hover,.btn:hover{background:var(--green);color:#00140d;box-shadow:0 0 20px #00ff9c66;transform:translateY(-2px)}
+.music-row{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.music-name{font-size:19px;color:#e4fff4}.music-hint{font-size:14px;color:var(--muted)}
+audio{width:100%;margin-top:16px;accent-color:var(--green)}
+.surprise{text-align:center}
+.big-emoji{font-size:44px;margin-bottom:10px}
+.hidden{display:none}
+.result{font:600 clamp(17px,4vw,24px) 'Orbitron',sans-serif;color:var(--green);line-height:1.5;margin:17px 0}
+.footer{text-align:center;color:#53716a;font:10px 'Orbitron',sans-serif;letter-spacing:2px;padding:25px 0}
+@media(max-width:560px){.profile{grid-template-columns:1fr;text-align:center}.tags{justify-content:center}.card{padding:19px}.avatar-wrap{width:145px;height:145px}.top{font-size:9px;letter-spacing:1px}}
 </style>
 </head>
-
 <body>
+<div class="scanlines"></div>
+<main class="wrap">
+  <div class="top"><span>SAJU SYSTEMS // PERSONAL NODE</span><span class="live"><i class="dot"></i> ONLINE</span></div>
+  <header class="hero">
+    <div class="kicker">WELCOME TO THE UNKNOWN</div>
+    <h1>ACCESS <span>GRANTED</span></h1>
+    <div class="subtitle">A little mystery. A little madness. 😈</div>
+  </header>
 
-<div class="container">
-
-    <div class="emoji" id="emoji">😂</div>
-
-    <h1>BEST FRIEND TEST</h1>
-
-    <p id="question">
-        তোমার বন্ধুর আসল পরিচয় বের করতে প্রস্তুত? 🤣
-        <br>আগে বন্ধুর নাম লেখো!
-    </p>
-
-    <input type="text" id="name" placeholder="বন্ধুর নাম লেখো...">
-
-    <button onclick="startTest()" id="start">
-        Start Test 😂
-    </button>
-
-    <div id="game" class="hidden">
-        <button onclick="answer('yes')">হ্যাঁ 😎</button>
-        <button onclick="answer('no')">না 🥲</button>
+  <section class="card">
+    <h2 class="section-title">// OWNER PROFILE</h2>
+    <div class="profile">
+      <div class="avatar-wrap"><img class="avatar" src="profile.jpg" alt="Owner profile picture" onerror="this.style.opacity='.15';this.alt='Add profile.jpg to show the owner photo';"></div>
+      <div>
+        <div class="owner">SAJU_ISLAM</div>
+        <div class="role">★ SYSTEM OWNER // THE DARK SIDE ★</div>
+        <div class="bio">Silent mode on. Attitude level unknown. Welcome to my little digital universe.</div>
+        <div class="tags"><span class="tag">BANGLADESH</span><span class="tag">HTML / CSS</span><span class="tag">NO RULES, JUST VIBES</span></div>
+      </div>
     </div>
+  </section>
 
-    <div id="result"></div>
-
-    <button onclick="location.reload()" id="again" class="hidden">
-        আবার খেলো 🔄
-    </button>
-
-    <div class="footer">
-        MADE WITH 😂 BY SAJU_ISLAM
+  <section class="card">
+    <h2 class="section-title">// LIVE TERMINAL</h2>
+    <div class="terminal" id="terminal" aria-live="polite">
+      <div><span class="prompt">root@saju:~$</span> initializing_friend_protocol...</div>
+      <div>Loading secret files <span style="color:#00d9ff">[OK]</span></div>
+      <div>Checking friendship level <span style="color:#00d9ff">[READY]</span></div>
+      <div id="terminalLine">Waiting for visitor<span class="cursor"></span></div>
     </div>
+    <div class="actions">
+      <button onclick="runScan()">RUN FRIEND SCAN</button>
+      <button onclick="showSurprise()">OPEN SECRET FILE</button>
+    </div>
+  </section>
 
-</div>
+  <section class="card surprise hidden" id="surprise">
+    <div class="big-emoji">🫨</div>
+    <h2 class="section-title">// SECRET FILE UNLOCKED</h2>
+    <div class="result">ALERT: FRIEND DETECTED! 😂</div>
+    <p class="bio">তোমার বন্ধুত্বের লেভেল অনেক বেশি...<br>কিন্তু পাগলামির লেভেল তার থেকেও বেশি! 💀</p>
+    <p style="color:var(--cyan);font-size:17px">এই ওয়েবসাইট বানানো হয়েছে শুধু তোমাকে চমকে দেওয়ার জন্য! ❤️</p>
+  </section>
 
+  <section class="card">
+    <h2 class="section-title">// OWNER'S SOUNDTRACK</h2>
+    <div class="music-row">
+      <div><div class="music-name">♫ A TRACK FOR THE VIBE</div><div class="music-hint">Press play to listen</div></div>
+      <span class="tag">MP3 PLAYER</span>
+    </div>
+    <audio controls preload="metadata">
+      <source src="song.mp3" type="audio/mpeg">
+      Your browser does not support audio.
+    </audio>
+  </section>
+
+  <div class="footer">DESIGNED BY SAJU_ISLAM // END OF TRANSMISSION</div>
+</main>
 <script>
-let friend = "";
-let step = 0;
-
-const questions = [
-    "তুমি কি নিজেকে অনেক চালাক মনে করো? 🧠",
-    "তুমি কি সারাদিন মোবাইল নিয়ে পড়ে থাকো? 📱",
-    "তুমি কি বন্ধুর কাছ থেকে ট্রিট খাও? 🍔",
-    "তুমি কি আসলে একটা পাগল? 🤣"
-];
-
-function startTest() {
-    friend = document.getElementById("name").value.trim();
-
-    if (!friend) {
-        alert("আগে বন্ধুর নাম লেখো! 😂");
-        return;
-    }
-
-    document.getElementById("start").classList.add("hidden");
-    document.getElementById("name").classList.add("hidden");
-    document.getElementById("game").classList.remove("hidden");
-
-    showQuestion();
+function runScan(){
+ const line=document.getElementById('terminalLine');
+ const btn=document.querySelector('button');
+ const messages=[
+  'Connecting to friendship database...',
+  'Scanning silly behaviour...',
+  'Measuring madness level...',
+  'Result: 100% certified pagol 😂'
+ ];
+ let i=0; line.textContent=''; btn.disabled=true;
+ const timer=setInterval(()=>{
+  line.textContent=messages[i++];
+  if(i===messages.length){clearInterval(timer);btn.disabled=false;}
+ },650);
 }
-
-function showQuestion() {
-    if (step < questions.length) {
-        document.getElementById("question").innerText =
-            friend + ", " + questions[step];
-    } else {
-        finish();
-    }
-}
-
-function answer(value) {
-    step++;
-    showQuestion();
-}
-
-function finish() {
-    document.getElementById("game").classList.add("hidden");
-    document.getElementById("emoji").innerText = "💀";
-
-    document.getElementById("question").innerText =
-        "TEST COMPLETE! 😂";
-
-    document.getElementById("result").innerHTML =
-        "Congratulations " + escapeHTML(friend) +
-        "! 🎉<br><br>" +
-        "তোমার রেজাল্ট: 100% পাগল 🤣<br>" +
-        "তুমি পৃথিবীর সেরা আজব বন্ধু! 🗿❤️";
-
-    document.getElementById("again").classList.remove("hidden");
-}
-
-function escapeHTML(str) {
-    return str.replace(/[&<>"']/g, function(c) {
-        return {
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#39;'
-        }[c];
-    });
+function showSurprise(){
+ document.getElementById('surprise').classList.remove('hidden');
+ document.getElementById('surprise').scrollIntoView({behavior:'smooth',block:'center'});
 }
 </script>
-
 </body>
 </html>
